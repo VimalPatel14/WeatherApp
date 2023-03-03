@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cityFinderFragment">
+
+    <fragment
+        android:id="@+id/cityFinderFragment"
+        android:name="com.vimal.weather.view.CityFinderFragment"
+        android:label="CityFinderFragment">
+        <action
+            android:id="@+id/action_cityFinderFragment_to_weatherDetailFragment"
+            app:destination="@id/weatherDetailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherDetailFragment"
+        android:name="com.vimal.weather.view.WeatherDetailFragment"
+        android:label="WeatherDetailFragment">
+        <action
+            android:id="@+id/action_weatherDetailFragment_to_cityFinderFragment"
+            app:destination="@id/cityFinderFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_weatherDetailFragment_to_fiveDayForecastFragment"
+            app:destination="@id/fiveDayForecastFragment" />
+        <action
+            android:id="@+id/action_weatherDetailFragment_to_radarFragment"
+            app:destination="@id/radarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fiveDayForecastFragment"
+        android:name="com.vimal.weather.view.FiveDayForecastFragment"
+        android:label="FiveDayForecastFragment">
+        <action
+            android:id="@+id/action_fiveDayForecastFragment_to_weatherDetailFragment"
+            app:destination="@id/weatherDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/radarFragment"
+        android:name="com.vimal.weather.view.RadarFragment"
+        android:label="RadarFragment">
+        <action
+            android:id="@+id/action_radarFragment_to_weatherDetailFragment"
+            app:destination="@id/weatherDetailFragment" />
+    </fragment>
+</navigation>
