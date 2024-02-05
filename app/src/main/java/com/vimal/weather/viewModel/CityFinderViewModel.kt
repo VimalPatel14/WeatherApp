@@ -8,6 +8,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.*
 import com.vimal.weather.common.ShowLoading
 import com.vimal.weather.data.RecCityNameModel
@@ -80,7 +81,8 @@ class CityFinderViewModel(val repository: CityFinderRepository) : ViewModel() {
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.e("vimal", e.toString())
+                    Toast.makeText(context, e.message.toString(), Toast.LENGTH_SHORT).show()
+                    Log.e("vimal", "${e.message} error")
                 }
 
             })

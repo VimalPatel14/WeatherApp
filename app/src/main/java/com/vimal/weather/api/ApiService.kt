@@ -58,7 +58,7 @@ interface ApiService {
 
 fun createApiServiceInstance(): ApiService {
     val retrofit = Retrofit.Builder()
-        .baseUrl("http://dataservice.accuweather.com/")
+        .baseUrl("https://dataservice.accuweather.com/")
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
